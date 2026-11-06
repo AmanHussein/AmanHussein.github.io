@@ -148,6 +148,32 @@
         grid-template-columns: 1fr;
       }
     }
+
+    /* Two compact project cards on desktop, one column on smaller screens. */
+    main { max-width: 1280px; }
+    .projects { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; align-items: stretch; }
+    .projects > h2 { grid-column: 1 / -1; margin-bottom: 0; }
+    .project { padding: 26px; border-radius: 14px; display: flex; flex-direction: column; min-width: 0; }
+    .project + .project { margin-top: 0; }
+    .project .eyebrow { font-size: 10px; letter-spacing: 1.4px; }
+    .project h3 { font-size: 23px; line-height: 1.35; margin: 12px 0; }
+    .project p { font-size: 14px; }
+    .metrics { gap: 10px; margin: 20px 0; }
+    .metric { padding: 12px; border-radius: 7px; min-width: 0; }
+    .metric strong { font-size: clamp(18px, 1.7vw, 23px); line-height: 1.35; }
+    .metric span { display: block; margin-top: 7px; font-size: 11px; line-height: 1.5; }
+    .project .note { font-size: 12px; }
+    .tags { font-size: 12px; margin: 17px 0; }
+    .project .button { align-self: flex-start; margin-top: auto; font-size: 13px; padding: 11px 16px; }
+    @media (max-width: 850px) {
+      .projects { grid-template-columns: minmax(0, 1fr); }
+      .project h3 { font-size: 25px; }
+      .metric strong { font-size: 23px; }
+    }
+    @media (max-width: 600px) {
+      .project { padding: 22px; }
+      .metrics { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body>
