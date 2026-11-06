@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Aman Hussein's supply chain analytics portfolio. Explore projects in demand forecasting and inventory planning.">
+  <meta name="description" content="Aman Hussein's supply chain analytics portfolio. Explore projects in demand forecasting, inventory analysis and replenishment planning.">
   <title>Aman Hussein | Analytics Portfolio</title>
   <style>
     * {
@@ -59,6 +59,8 @@
       border-radius: 18px;
       box-shadow: 0 12px 30px rgba(24, 43, 69, 0.04);
     }
+
+    .project + .project { margin-top: 28px; }
 
     .project h3 {
       margin: 10px 0;
@@ -198,6 +200,41 @@
            href="dashboard.html">
           Explore the project →
         </a>
+      </article>
+
+      <article class="project">
+        <div class="eyebrow">Inventory analysis &amp; replenishment planning</div>
+        <h3>Sportbutiken — From Excel to an Interactive Dashboard</h3>
+        <p>
+          Building an Excel inventory and purchasing tool for a fictional sports retailer,
+          then turning the analysis into an interactive web dashboard. Explore stock coverage,
+          supplier delivery times, purchasing proposals and the margin impact of discounts.
+        </p>
+        <div class="metrics">
+          <div class="metric">
+            <strong>10 products</strong>
+            <span>3 suppliers · 4 weeks of fictional sales</span>
+          </div>
+          <div class="metric">
+            <strong>6 at risk</strong>
+            <span>Stock coverage below supplier delivery time</span>
+          </div>
+          <div class="metric">
+            <strong>SEK 37,820</strong>
+            <span>Closing inventory valued at purchase cost</span>
+          </div>
+        </div>
+        <p class="note">
+          Fictional learning dataset, not measured business impact.
+          Baseline purchasing proposals total SEK 14,035 with one week of safety time.
+          Existing purchase orders and operating expenses are excluded.
+          Dashboard and downloadable Excel workbook are in Swedish.
+        </p>
+        <div class="tags">Excel · JavaScript · HTML/CSS · Inventory analysis · Scenario modelling</div>
+        <a class="button" href="https://amanhussein.github.io/sportbutiken-dashboard./">
+          Explore the dashboard →
+        </a>
+        <p class="note"><a href="https://github.com/AmanHussein/sportbutiken-dashboard.">View source code and methodology on GitHub</a></p>
       </article>
     </section>
 
