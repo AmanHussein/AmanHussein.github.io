@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="sv">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Ett inköpscase av Aman Hussein. Utforska spendanalys, offertutvärdering, förhandling och leveransuppföljning med fiktiv data.">
+<meta name="theme-color" content="#1c382f">
+<title>Från spendanalys till inköpsbeslut — Aman Hussein</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css"><script src="data.js" defer></script><script src="app.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Till innehållet</a>
+<aside class="sidebar">
+ <a class="back" href="../">← Portfolio</a>
+ <a class="brand" href="#top"><span class="brand-mark" aria-hidden="true">ah<span> /</span></span><span>AMAN HUSSEIN<small>Inköp & supply chain</small></span></a>
+ <div class="nav-label">PROJEKTETS DELAR</div>
+ <nav aria-label="Projektnavigering">
+  <a href="#spend" class="active"><span>01</span> Spendanalys <i>↗</i></a>
+  <a href="#offers"><span>02</span> Offertutvärdering <i>↗</i></a>
+  <a href="#negotiation"><span>03</span> Förhandling <i>↗</i></a>
+  <a href="#delivery"><span>04</span> Leveransuppföljning <i>↗</i></a>
+  <a href="#method"><span>05</span> Metod & antaganden <i>↗</i></a>
+ </nav>
+ <div class="side-bottom"><span class="small-tag">PORTFÖLJCASE</span><p>Från inköpshistorik<br>till ett motiverat beslut.</p><div class="side-rule"></div><small>Excel som analysunderlag.<br>Interaktiv presentation på webben.</small><a href="Inkopsanalys.xlsx" download>Hämta Excel-underlaget <span>↓</span></a></div>
+</aside>
+<main id="main">
+ <header id="top" class="topbar"><span>INKÖPSANALYS <span class="top-slash">/</span> AMAN HUSSEIN</span><a href="Inkopsanalys.xlsx" download>Excel-underlag <span aria-hidden="true">↓</span></a></header>
+ <section class="hero">
+  <div class="hero-heading"><p class="eyebrow"><span></span> FRÅN ANALYS TILL ÅTGÄRD</p><h1>Från spendanalys<br>till <em>inköpsbeslut.</em></h1><p class="hero-copy">Vilka inköp bör prioriteras — och vilken leverantör ger bäst utfall när pris, frakt, orderstorlek och lager vägs samman?</p></div>
+  <div class="case-note"><span class="case-number">CASE / 03</span><div class="note-icon" aria-hidden="true">▤</div><h2>Ett sammanhängande inköpscase.</h2><p>16 fakturarader, två offerter och fem order. Byggt stegvis i Excel och presenterat som ett interaktivt beslutsunderlag.</p><span class="fiction-label"><span></span> Fiktiv övningsdata</span><small>Inköpshistorik 2025. Kalkyl och simulerat leveransutfall 2026. Alla belopp exklusive moms.</small></div>
+ </section>
+ <div class="headline-metrics" aria-label="Projektets grundresultat">
+  <div><span>Historiska inköp</span><strong>60 830 <small>kr</small></strong><p>16 fakturarader under 2025</p></div>
+  <div><span>Prioriterad artikel</span><strong>48,7 <small>%</small></strong><p>Wellpapplådornas andel av inköpen</p></div>
+  <div><span>Rekommenderat upplägg</span><strong>800 <small>st/order</small></strong><p>Packpartner, bland testade scenarier</p></div>
+  <div><span>Simulerad OTIF</span><strong>40 <small>%</small></strong><p>2 av 5 order kompletta och i tid</p></div>
+ </div>
+ <section id="spend" class="section">
+  <div class="section-head"><div><p class="eyebrow">01 / INKÖPSHISTORIK</p><h2>Var finns inköpsvolymen?</h2></div><span class="period">2025 · HISTORIK</span></div>
+  <p class="section-intro">Wellpapplådorna står för nästan hälften av inköpsbeloppet. De blir fokus för offertutvärderingen. Filtrera historiken för att se hur beloppen fördelas.</p>
+  <div class="filterbar"><label>Inköpskategori<select id="category"><option value="all">Alla kategorier</option></select></label><label>Leverantör<select id="supplier"><option value="all">Alla leverantörer</option></select></label><button class="text-button" id="reset-spend">Återställ filter ↺</button><div class="filtered-total"><span>Valt urval</span><strong id="spend-total"></strong><small id="spend-rows"></small></div></div>
+  <div class="spend-layout"><div class="panel"><div class="panel-title"><h3>Inköpsbelopp per artikel</h3><span>SEK</span></div><div id="article-chart" class="bar-chart" role="img" aria-label="Inköpsbelopp per artikel"></div><p class="chart-note">Varubelopp från fakturaraderna. Frakt och lagerkostnader ingår inte.</p></div>
+  <div class="panel"><div class="panel-title"><h3>Leverantörsfördelning</h3><span>VALT URVAL</span></div><div class="table-wrap"><table><thead><tr><th>Leverantör</th><th>Belopp</th><th>Andel</th></tr></thead><tbody id="supplier-body"></tbody></table></div><div class="insight"><span>ANALYSENS FOKUS</span><p>Samma wellpapplåda köps från två leverantörer till olika priser. Historiska prisskillnader motiverar en offertförfrågan, men bevisar inte mängdrabatt.</p></div></div></div>
+  <details class="source-detail"><summary>Visa fakturarader i urvalet <span>+</span></summary><div class="table-wrap"><table class="data-table"><thead><tr><th>Datum</th><th>Faktura</th><th>Leverantör</th><th>Artikel</th><th>Antal</th><th>Enhet</th><th>Styckpris</th><th>Belopp</th></tr></thead><tbody id="history-body"></tbody></table></div></details>
+ </section>
+ <section id="offers" class="section">
+  <div class="section-head"><div><p class="eyebrow">02 / OFFERTUTVÄRDERING</p><h2>Det lägsta priset är bara början.</h2></div><span class="period">2026 · KALKYL</span></div>
+  <p class="section-intro">Jämför samma wellpapplåda och ett antaget årsbehov på 3 800 stycken. Utforska hur orderstorlek, frakt och lagerhållning påverkar jämförelsen.</p>
+  <div class="scenario-controls"><fieldset><legend>Antal per order</legend><div class="segmented" id="quantities"><button data-qty="500" aria-pressed="false">500 <small>st</small></button><button data-qty="800" class="selected" aria-pressed="true">800 <small>st</small></button><button data-qty="1000" aria-pressed="false">1 000 <small>st</small></button></div></fieldset><label>Lagerkapacitet <span class="unit">st</span><input id="capacity" type="number" min="1" max="10000" step="1" value="800"></label><label class="range-label">Lagerhållningsränta <output id="rate-output" for="rate">20 %</output><input id="rate" type="range" min="0" max="40" step="1" value="20"></label><button class="text-button" id="reset-model">Grundscenario ↺</button></div>
+  <div id="capacity-message" class="capacity-note" aria-live="polite"></div>
+  <div class="offer-grid" id="offer-cards"></div>
+  <div class="decision-strip" id="decision" aria-live="polite"></div>
+  <details class="source-detail"><summary>Visa beräkningsstegen <span>+</span></summary><div class="table-wrap"><table><thead><tr><th>Leverantör</th><th>Inköpsantal</th><th>Varor</th><th>Frakt</th><th>Snittlager</th><th>Lagerkostnad</th><th>Kalkylbelopp</th></tr></thead><tbody id="calculation-body"></tbody></table></div><p class="details-note">Kalkylbeloppet motsvarar arbetsbokens ”Årskostnad”: årets inköpsbelopp, frakt och uppskattad lagerhållningskostnad. Vid överinköp ingår även kvarvarande varor i inköpsbeloppet. De är lager, inte förbrukad kostnad. Betalningsvillkorens finansieringseffekt ingår inte.</p></details>
+  <p class="model-note">Grundrekommendation: Packpartner med 800 per order, fyra leveranser på 800 och en på 600. Likvärdig kvalitet antas. Lägre kalkylbelopp bland de tre testade orderstorlekarna innebär inte att ett globalt optimum har fastställts.</p>
+ </section>
+ <section id="negotiation" class="section">
+  <div class="section-head"><div><p class="eyebrow">03 / FÖRHANDLINGSUNDERLAG</p><h2>Vad är ett lägre pris värt?</h2></div><span class="period amber">MÅLPRIS EJ ACCEPTERAT</span></div>
+  <div class="negotiation-grid"><div class="panel"><div class="panel-title"><h3>Packpartner · prisförhandling</h3><span id="neg-scenario"></span></div><label class="target-label" for="target">Testa målpris <output id="target-output"></output></label><input id="target" class="target-range" type="range" min="6.8" max="7.3" step="0.01" value="7.1"><div class="range-ends"><span>6,80 kr/st</span><span>Offert 7,30 kr/st</span></div><div class="neg-metrics"><div><span>Lägre varukostnad</span><strong id="goods-saving"></strong></div><div><span>Total besparingspotential</span><strong id="total-saving"></strong></div></div><p class="chart-note">Potential jämfört med ursprunglig offert, inklusive omräknad lagerkostnad. Ingen realiserad besparing.</p></div><div class="neg-brief"><span class="small-tag dark">FÖRHANDLINGSPLAN</span><h3>Samla volymen.<br>Skapa framförhållning.</h3><p>Samlad årsvolym på 3 800 lådor och planerade beställningar är argument för bättre villkor. Årsbehovet är ett planeringsantagande, inte ett bindande volymlöfte.</p><dl><div><dt>Första önskemål</dt><dd>7,10 kr per låda.</dd></div><div><dt>Alternativ</dt><dd>Lägre frakt eller 30 dagars betalningstid.</dd></div></dl><p class="pay-note">Nordisk Emballage ger 30 dagars betalningstid; Packpartner ger 15. Längre betalningstid gynnar likviditeten, men effekten är inte prissatt i kalkylen.</p></div></div>
+ </section>
+ <section id="delivery" class="section">
+  <div class="section-head"><div><p class="eyebrow">04 / LEVERANSUPPFÖLJNING</p><h2>Följer leverantören överenskommelsen?</h2></div><span class="period">2026 · SIMULERAT HELÅR</span></div>
+  <p class="section-intro">Fem fiktiva order från Packpartner till ursprungligt offertpris. Första leveransen per order bedöms mot bekräftat leveransdatum och beställt antal.</p>
+  <div class="delivery-metrics"><div><strong>40 %</strong><span>OTIF</span><small>2 av 5 hela beställningar i tid</small></div><div><strong>2</strong><span>Försenade order</span><small>Två kalenderdagar vardera</small></div><div><strong>50 <small>st</small></strong><span>Återstående antal</span><small>Order IO-2026-003</small></div><div class="otif-explanation"><span>OTIF / ON TIME IN FULL</span><p>Hela beställningen i tid.</p><small>Både tid och antal måste uppfyllas.</small></div></div>
+  <div class="panel delivery-panel"><div class="panel-title"><h3>Orderöversikt</h3><label class="inline-filter">Visa<select id="delivery-filter"><option value="all">Alla order</option><option value="late">Försenade</option><option value="short">Återstående antal</option><option value="otif">OTIF uppfyllt</option></select></label></div><div class="table-wrap"><table><thead><tr><th>Ordernummer</th><th>Bekräftat datum</th><th>Leveransdatum</th><th>Beställt</th><th>Mottaget</th><th>Försening</th><th>Återstår</th><th>OTIF</th></tr></thead><tbody id="delivery-body"></tbody></table></div><p class="chart-note" id="delivery-count"></p></div>
+  <div class="actions-grid"><div><span class="action-number">01</span><div><h3>Följ upp restleveransen</h3><p>Begär leveransdatum för de 50 återstående lådorna på IO-2026-003.</p></div></div><div><span class="action-number">02</span><div><h3>Utred förseningarna</h3><p>Utred orsak och förebyggande åtgärd för IO-2026-002 och IO-2026-005.</p></div></div></div>
+  <p class="model-note">Simulerat helårsutfall, även för framtida datum. Urvalet är för litet för långtgående slutsatser om leverantörsprestanda. Leveransövningen är separat från offertkalkylens antagande om hela leveranser utan lagerbrist.</p>
+ </section>
+ <section id="method" class="section method-section">
+  <div class="section-head"><div><p class="eyebrow">05 / METOD & ANTAGANDEN</p><h2>Beslut som går att följa tillbaka.</h2></div></div>
+  <div class="method-grid"><div><h3>Så byggdes projektet</h3><p>Jag byggde inköpshistoriken och analysen stegvis i Excel med handledning. SUMIFS, XLOOKUP, COUNTIF, logiska villkor och en pivottabell kopplar ihop data, analys och beslut. Webbpresentationen är framtagen med AI-stöd.</p><a class="download-button" href="Inkopsanalys.xlsx" download>Hämta Excel-arbetsboken <span>↓</span></a><a class="method-link" href="https://github.com/AmanHussein/AmanHussein.github.io/tree/main/procurement">Källkod och metod på GitHub ↗</a></div><dl class="method-list"><div><dt>Data och perioder</dt><dd>Fiktiva fakturarader från 2025, fiktiva offerter och simulerade order för 2026. Ingen faktisk företagsprestation.</dd></div><div><dt>Lager och order</dt><dd>Jämn förbrukning, inget start- eller säkerhetslager. Hela leveranser när lagret når noll. Sista ordern täcker återstående behov, dock minst minsta orderkvantitet.</dd></div><div><dt>Snittlager</dt><dd>Tidsvägt genomsnitt över året, inklusive mindre sista order och eventuellt kvarvarande lager. Lagerhållningsräntan är ett antagande.</dd></div><div><dt>Begränsningar</dt><dd>Likvärdig kvalitet antas. Finansiering från betalningsvillkor, orderadministration och kostnader för leveransstörningar ingår inte. Ingen realiserad besparing redovisas.</dd></div><div><dt>Historiskt pris</dt><dd>Vägt snittpris för wellpapplådor: 29 620 kr / 3 800 st ≈ 7,79 kr/st. Historiken saknar frakt och kan inte jämföras direkt med hela offertkalkylen.</dd></div></dl></div>
+ </section>
+ <footer><a href="../">← Tillbaka till portfolion</a><span>Aman Hussein · Från spendanalys till inköpsbeslut</span><a href="#top">Till toppen ↑</a></footer>
+</main>
+<noscript><p class="noscript">Aktivera JavaScript för filter och beräkningar. Du kan också <a href="Inkopsanalys.xlsx">hämta Excel-underlaget</a>.</p></noscript>
+</body></html>
